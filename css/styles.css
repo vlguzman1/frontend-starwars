@@ -1,0 +1,18 @@
+.field {
+  font-size: 80%;
+  font-weight: bold;
+}
+.value {
+  color: #6c757d;
+  font-size: 80%;
+  font-weight: 400;
+}
+.list-group-item.sw {
+  color: yellow;
+  background-color: #0d0d0d;
+  border-color: #000;
+}
+a.nodecoration:hover, a.nodecoration:active, a.nodecoration:visited {
+  text-decoration:none;
+  color:inherit;
+}
