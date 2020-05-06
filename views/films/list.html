@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-6" ng-repeat="film in results">
+    <a class="nodecoration" href="#!/films/{{film.id}}">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="img/generic.jpeg" class="card-img" alt="...">
+            <div class="movieTitle">{{film.title}}</div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{film.title}}</h5>
+              <p class="card-text"> {{film.opening_crawl}}</p>
+              <p class="card-text"><small class="text-muted">{{film.director}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="img/generic.jpeg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{data.title}}</h5>
+                  <p class="card-text">{{data.opening_crawl}}</p>
+                  <div class="card-text">
+                    <span class="field">Director:</span>
+                    <span class="value">{{data.director}}</span>
+                  </div>
+                  <div class="card-text">
+                    <span class="field">Productor:</span>
+                    <span class="value">{{data.producer}}</span>
+                  </div>
+                  <div class="card-text">
+                    <span class="field">Fecha de lanzamiento:</span>
+                    <span class="value">{{data.release_date}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <li class="list-group-item sw">Personajes</li>
+            <li class="list-group-item" ng-repeat="character in data.characters">{{character}}</li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <li class="list-group-item sw">Planetas</li>
+            <li class="list-group-item" ng-repeat="planet in data.planets">{{planet}}</li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul class="list-group">
+            <li class="list-group-item sw">Naves</li>
+            <li class="list-group-item" ng-repeat="starship in data.starships">{{starship}}</li>
+          </ul>
+        </div>
+      </div>

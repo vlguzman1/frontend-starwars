@@ -16,3 +16,16 @@ a.nodecoration:hover, a.nodecoration:active, a.nodecoration:visited {
   text-decoration:none;
   color:inherit;
 }
+.movieTitle{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: yellow;
+  text-align: center;
+  line-height: normal;
+  padding: 2px;
+}
+.nodecoration{
+  color:currentcolor
+}
