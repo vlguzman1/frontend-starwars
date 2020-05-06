@@ -20,8 +20,8 @@
       </ol>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <form class="form-inline my-2 my-lg-0 mr-auto">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+        <form class="form-inline my-2 my-lg-0 mr-auto" onSubmit="window.location.href='/#!/films/search/' + this.str.value;this.str.value='';return(false);">
+          <input class="form-control mr-sm-2" name="str" type="search" placeholder="Buscar" aria-label="Buscar">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
         <ul class="navbar-nav">
@@ -43,7 +43,7 @@
 
     </nav>
 
-    <hr style="">
+    <hr>
 
     <div style="margin:1rem"  ng-view>
       Loading...
@@ -76,6 +76,10 @@
             templateUrl : "views/films/details.html",
             controller : "filmsCtrl"
           })
+          .when('/films/search/:str', {
+            templateUrl : "views/films/list.html",
+            controller : "filmsCtrl"
+          })
           .when("/characters", {
             templateUrl : "views/characters/list.html",
             controller : "charactersCtrl"
@@ -95,7 +99,10 @@
       });
       app.controller("filmsCtrl", function ($scope,$http, $routeParams) {
         if($routeParams.id==undefined){
-          $http.get("https://swapi.py4e.com/api/films/")
+          var url="https://swapi.py4e.com/api/films/";
+          if($routeParams.str!=undefined) url+="?search=" + $routeParams.str;
+          console.log(url);
+          $http.get(url)
             .then(function (response) {
               for(i=0;i<response.data.results.length;i++){
                 var url=response.data.results[i].url;
