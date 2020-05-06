@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6" ng-repeat="starship in results">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="img/generic.jpeg" class="card-img" alt="...">
+          <div class="movieTitle">{{starship.name}}</div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{starship.name}}</h5>
+            <p class="card-text">
+              Capacidad: <small class="text-muted">{{starship.cargo_capacity}}</small><br>
+              Consumibles: <small class="text-muted">{{starship.consumables}}</small><br>
+              Valor: <small class="text-muted">{{starship.cost_in_credits}}</small><br>
+              Tripulación: <small class="text-muted">{{starship.crew}}</small><br>
+              Largo: <small class="text-muted">{{starship.length}}</small><br>
+              Fabricante: <small class="text-muted">{{starship.manufacturer}}</small><br>
+              Velocidad máxima: <small class="text-muted">{{starship.max_atmosphering_speed}}</small><br>
+              Modelo: <small class="text-muted">{{starship.model}}</small><br>
+              Pasajeros: <small class="text-muted">{{starship.passengers}}</small><br>
+              Clase: <small class="text-muted">{{starship.starship_class}}</small><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

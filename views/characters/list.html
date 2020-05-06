@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-6" ng-repeat="character in results">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="img/generic.jpeg" class="card-img" alt="...">
+          <div class="movieTitle">{{character.name}}</div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{character.name}}</h5>
+            <p class="card-text">
+              Nacimiento: <small class="text-muted">{{character.birth_year}}</small><br>
+              Color de ojos: <small class="text-muted">{{character.eye_color}}</small><br>
+              Género: <small class="text-muted">{{character.gender}}</small><br>
+              Color de pelo: <small class="text-muted">{{character.hair_color}}</small><br>
+              Alto: <small class="text-muted">{{character.height}}</small><br>
+              Peso: <small class="text-muted">{{character.mass}}</small><br>
+              Color: <small class="text-muted">{{character.skin_color}}</small><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
