@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-6" ng-repeat="vehicle in results">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="img/generic.jpeg" class="card-img" alt="...">
+          <div class="movieTitle">{{vehicle.name}}</div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{vehicle.name}}</h5>
+            <p class="card-text">
+              Capacidad: <small class="text-muted">{{vehicle.cargo_capacity}}</small><br>
+              Consumibles: <small class="text-muted">{{vehicle.consumables}}</small><br>
+              Valor: <small class="text-muted">{{vehicle.cost_in_credits}}</small><br>
+              Tripulación: <small class="text-muted">{{vehicle.crew}}</small><br>
+              Largo: <small class="text-muted">{{vehicle.length}}</small><br>
+              Fabricante: <small class="text-muted">{{vehicle.manufacturer}}</small><br>
+              Velocidad máxima: <small class="text-muted">{{vehicle.max_atmosphering_speed}}</small><br>
+              Modelo: <small class="text-muted">{{vehicle.model}}</small><br>
+              Pasajeros: <small class="text-muted">{{vehicle.passengers}}</small><br>
+              Clase: <small class="text-muted">{{vehicle.vehicle_class}}</small><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

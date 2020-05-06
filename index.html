@@ -33,8 +33,8 @@
               <a class="dropdown-item" href="#!/films">Películas</a>
               <a class="dropdown-item" href="#!/characters">Personajes</a>
               <a class="dropdown-item" href="#!/starships">Naves</a>
-              <a class="dropdown-item" href="#">Vehículos</a>
-              <a class="dropdown-item" href="#">Especies</a>
+              <a class="dropdown-item" href="#!/vehicles">Vehículos</a>
+              <a class="dropdown-item" href="#!/species">Especies</a>
             </div>
           </li>
         </ul>
@@ -83,6 +83,14 @@
           .when("/starships", {
             templateUrl : "views/starships/list.html",
             controller : "starshipsCtrl"
+          })
+          .when("/vehicles", {
+            templateUrl : "views/vehicles/list.html",
+            controller : "vehiclesCtrl"
+          })
+          .when("/species", {
+            templateUrl : "views/species/list.html",
+            controller : "speciesCtrl"
           });
       });
       app.controller("filmsCtrl", function ($scope,$http, $routeParams) {
@@ -146,6 +154,52 @@
           else if($routeParams.id!=undefined){
             console.log("Traer detalles...");
             $http.get("https://swapi.py4e.com/api/starships/" + $routeParams.id + "/")
+              .then(function (response) {
+                console.log(response.data);
+                $scope.data = response.data;
+              });
+          }
+      });
+      app.controller("vehiclesCtrl", function ($scope,$http, $routeParams) {
+        if($routeParams.id==undefined){
+          $http.get("https://swapi.py4e.com/api/vehicles/")
+            .then(function (response) {
+              console.log(response.data.results[1]);
+              for(i=0;i<response.data.results.length;i++){
+                var url=response.data.results[i].url;
+                var arrParts = url.split("/");
+                var id=arrParts[arrParts.length-2];
+                response.data.results[i].id=id;
+              }
+              $scope.results = response.data.results;
+            });
+          }
+          else if($routeParams.id!=undefined){
+            console.log("Traer detalles...");
+            $http.get("https://swapi.py4e.com/api/vehicles/" + $routeParams.id + "/")
+              .then(function (response) {
+                console.log(response.data);
+                $scope.data = response.data;
+              });
+          }
+      });
+      app.controller("speciesCtrl", function ($scope,$http, $routeParams) {
+        if($routeParams.id==undefined){
+          $http.get("https://swapi.py4e.com/api/species/")
+            .then(function (response) {
+              console.log(response.data.results[1]);
+              for(i=0;i<response.data.results.length;i++){
+                var url=response.data.results[i].url;
+                var arrParts = url.split("/");
+                var id=arrParts[arrParts.length-2];
+                response.data.results[i].id=id;
+              }
+              $scope.results = response.data.results;
+            });
+          }
+          else if($routeParams.id!=undefined){
+            console.log("Traer detalles...");
+            $http.get("https://swapi.py4e.com/api/species/" + $routeParams.id + "/")
               .then(function (response) {
                 console.log(response.data);
                 $scope.data = response.data;
